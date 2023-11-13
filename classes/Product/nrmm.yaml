@@ -1,0 +1,3 @@
+NonRoadMobileMachinery:
+  abstract: true
+  is_a: Product

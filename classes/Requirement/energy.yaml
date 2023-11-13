@@ -1,0 +1,5 @@
+EnergyUsage:
+  is_a: Requirement
+  slots:
+    - average
+    - peak

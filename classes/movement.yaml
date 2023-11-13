@@ -1,0 +1,7 @@
+Movement:
+  abstract: true
+  slots:
+    - startDate
+    - endDate
+    - startLocation
+    - endLocation

@@ -1,0 +1,5 @@
+Requirement:
+  abstract: true
+  slots:
+    - startDate
+    - endDate

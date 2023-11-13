@@ -1,0 +1,6 @@
+Connection:
+  abstract: true
+  is_a: Product
+
+GasConnection:
+  is_a: Connection

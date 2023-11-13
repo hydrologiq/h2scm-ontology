@@ -1,0 +1,11 @@
+Site:
+  abstract: true
+  slots:
+    - id
+    - name
+    - long
+    - lat
+    - streetAddress
+    - town
+    - postCode
+    - country

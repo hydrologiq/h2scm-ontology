@@ -1,0 +1,8 @@
+Monitoring:
+  abstract: true
+  is_a: Service
+
+FuelConsumptionMonitoring:
+  is_a: Monitoring
+PowerMonitoring:
+  is_a: Monitoring

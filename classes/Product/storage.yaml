@@ -1,0 +1,12 @@
+Storage:
+  abstract: true
+  is_a: Product
+  slots:
+    - capacity
+
+TubeTrailer:
+  is_a: Storage
+Cylinder:
+  is_a: Storage
+ManifoldCylinderPallet:
+  is_a: Storage

@@ -1,0 +1,22 @@
+name: bundle
+run-name: bundling ontology
+on:
+  push:
+    branches:
+      - main
+jobs:
+  bundle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+        with:
+          python-version: "3.10"
+      - name: bundle
+        run: ./build.sh
+      - name: Archive ontology artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: ontology
+          path: |
+            dist

@@ -1,0 +1,7 @@
+Project:
+  slots:
+    - id
+    - name
+    - startDate
+    - endDate
+    - sites

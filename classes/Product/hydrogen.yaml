@@ -1,0 +1,14 @@
+Hydrogen:
+  abstract: true
+  is_a: Product
+  slots:
+    - quantity
+    - purity
+    - storedIn
+    - producedAt
+    - source
+
+ElectrolyticHydrogen:
+  is_a: Hydrogen
+SteamMethaneReformingHydrogen:
+  is_a: Hydrogen

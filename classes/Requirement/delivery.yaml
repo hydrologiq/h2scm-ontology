@@ -1,0 +1,5 @@
+Delivery:
+  is_a: Requirement
+  slots:
+    - transportMovements
+    - transportProvidedBy

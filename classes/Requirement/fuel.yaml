@@ -1,0 +1,4 @@
+FuelRequirement:
+  is_a: Requirement
+  slots:
+    - weight

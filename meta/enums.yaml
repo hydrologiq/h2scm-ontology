@@ -1,0 +1,5 @@
+enums:
+  HydrogenSource:
+    permissible_values:
+      Grid:
+      Solar:

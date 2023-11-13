@@ -1,0 +1,10 @@
+id: https://w3id.org/hydrologiq/hydrogen/nrmm
+name: hydrogen
+prefixes:
+  linkml: https://w3id.org/linkml/
+  schema: http://schema.org/
+  hydrogen_nrmm: https://w3id.org/hydrologiq/hydrogen/nrmm
+imports:
+  - linkml:types
+default_prefix: hydrogen_nrmm
+default_range: string

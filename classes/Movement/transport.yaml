@@ -1,0 +1,11 @@
+TransportMovement:
+  is_a: Movement
+  slots:
+    - transportedIn
+
+FuelTransportMovement:
+  is_a: TransportMovement
+  slots:
+    - startWeight
+    - endWeight
+    - fuelStoredIn

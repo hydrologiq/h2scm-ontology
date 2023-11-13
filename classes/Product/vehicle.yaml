@@ -1,0 +1,9 @@
+Vehicle:
+  abstract: true
+  is_a: Product
+  slots:
+    - carries
+    - transportDistance
+
+ADRTruck:
+  is_a: Vehicle

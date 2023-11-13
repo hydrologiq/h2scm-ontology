@@ -1,0 +1,5 @@
+Operational:
+  is_a: Service
+  slots:
+    - coordinates
+    - manages

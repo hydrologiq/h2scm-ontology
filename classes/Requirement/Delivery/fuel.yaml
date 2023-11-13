@@ -1,0 +1,5 @@
+FuelDelivery:
+  is_a: Delivery
+  slots:
+    - weight
+    - fuelProvidedBy

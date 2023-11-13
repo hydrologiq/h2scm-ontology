@@ -1,0 +1,221 @@
+slots:
+  # Relationships
+  carries:
+    required: true
+    domain: Vehicle
+    range: Storage
+    multivalued: true
+  storedIn:
+    required: true
+    domain: Hydrogen
+    range: Storage
+    multivalued: true
+  includes:
+    required: true
+    domain: Service
+    range: Product
+    multivalued: true
+  coordinates:
+    required: true
+    domain: Operational
+    range: Service
+    multivalued: true
+  produces:
+    domain: Company
+    range: Product
+    multivalued: true
+  provides:
+    domain: Company
+    range: Service
+    multivalued: true
+  manages:
+    required: true
+    domain: Operational
+    range: Project
+    multivalued: true
+  sites:
+    required: true
+    domain: Project
+    range: ProjectSite
+    multivalued: true
+  basedAt:
+    domain: Product
+    range: DistributionSite
+    multivalued: true
+  producedAt:
+    required: true
+    domain: Hydrogen
+    range: ProductionSite
+    multivalued: true
+  estimatedEnergyUsage:
+    required: true
+    domain: ProjectSite
+    range: EnergyUsage
+    multivalued: true
+  actualEnergyUsage:
+    domain: ProjectSite
+    range: EnergyUsage
+    multivalued: true
+  refuellingSchedule:
+    required: false
+    domain: ProjectSite
+    range: FuelDelivery
+    multivalued: true
+  fuelDeliveries:
+    required: false
+    domain: ProjectSite
+    range: FuelDelivery
+    multivalued: true
+  estimatedFuelRequirement:
+    required: true
+    domain: ProjectSite
+    range: FuelRequirement
+    multivalued: true
+  actualFuelUsage:
+    required: true
+    domain: ProjectSite
+    range: FuelRequirement
+    multivalued: true
+  item:
+    required: true
+    domain: Quote
+    range: Product
+  assoicatedWith:
+    required: true
+    domain: Service
+    range: Project
+    multivalued: true
+  fuelProvidedBy:
+    required: true
+    domain: FuelDelivery
+    range: FuelService
+  transportProvidedBy:
+    required: true
+    domain: FuelDelivery
+    range: LogisticService
+  quotes:
+    multivalued: true
+    required: false
+    domain: Service
+    range: Quote
+  startLocation:
+    required: true
+    domain: Movement
+    range: Site
+  endLocation:
+    required: true
+    domain: Movement
+    range: Site
+  transportMovements:
+    multivalued: true
+    required: true
+    domain: Delivery
+    range: TransportMovement
+  transportedIn:
+    multivalued: true
+    required: true
+    domain: TransportMovement
+    range: Vehicle
+  fuelStoredIn:
+    multivalued: true
+    required: true
+    domain: FuelTransportMovement
+    range: Storage
+  price:
+    required: true
+    domain: Quote
+    range: Price
+  source:
+    multivalued: true
+    required: true
+    domain: Hydrogen
+    range: HydrogenSource
+
+  # Attributes
+  id:
+    identifier: true
+  name:
+    required: true
+  quantity:
+    range: decimal
+    minimum_value: 0
+    required: true
+  purity:
+    range: decimal
+    minimum_value: 0
+  capacity:
+    range: decimal
+    minimum_value: 0
+  transportDistance:
+    range: decimal
+    minimum_value: 0
+    required: true
+  powerRatingPrime:
+    range: decimal
+    minimum_value: 0
+    required: true
+  powerRatingPeak:
+    range: decimal
+    minimum_value: 0
+    required: true
+  currency:
+    required: true
+  monetaryValue:
+    required: true
+    range: decimal
+    minimum_value: 0
+  startDate:
+    required: true
+    range: date
+  endDate:
+    required: true
+    range: date
+  average:
+    required: true
+    range: decimal
+    minimum_value: 0
+  peak:
+    required: true
+    range: decimal
+    minimum_value: 0
+  weeklyRuntime:
+    required: true
+    range: decimal
+    minimum_value: 0
+  weight:
+    required: true
+    range: decimal
+    minimum_value: 0
+  startWeight:
+    required: true
+    range: decimal
+    minimum_value: 0
+  endWeight:
+    required: true
+    range: decimal
+    minimum_value: 0
+  weeklyFrequency:
+    required: true
+    range: decimal
+    minimum_value: 0
+  long:
+    required: true
+    range: decimal
+  lat:
+    required: true
+    range: decimal
+  streetAddress:
+    required: true
+  town:
+    required: true
+  postCode:
+    required: true
+  country:
+    required: true
+  unit:
+    required: false
+    range: string
+  units:
+    required: true
+    range: integer
+    minimum_value: 0

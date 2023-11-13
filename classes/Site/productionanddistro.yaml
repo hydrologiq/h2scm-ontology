@@ -1,0 +1,6 @@
+ProductionAndDistributionSite:
+  is_a: Site
+  mixins:
+    - ProductionSite
+    - DistributionSite
+    - EndUserSite

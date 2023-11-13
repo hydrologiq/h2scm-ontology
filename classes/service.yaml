@@ -1,0 +1,8 @@
+Service:
+  abstract: true
+  slots:
+    - id
+    - name
+    - includes
+    - quotes
+    - assoicatedWith

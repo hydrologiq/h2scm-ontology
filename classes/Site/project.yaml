@@ -1,0 +1,9 @@
+ProjectSite:
+  is_a: Site
+  slots:
+    - estimatedEnergyUsage
+    - actualEnergyUsage
+    - estimatedFuelRequirement
+    - actualFuelUsage
+    - refuellingSchedule
+    - fuelDeliveries

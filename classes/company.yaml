@@ -1,0 +1,6 @@
+Company:
+  slots:
+    - id
+    - name
+    - produces
+    - provides

@@ -1,0 +1,6 @@
+Product:
+  abstract: true
+  slots:
+    - id
+    - name
+    - basedAt

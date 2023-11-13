@@ -1,0 +1,11 @@
+Generator:
+  abstract: true
+  is_a: NonRoadMobileMachinery
+  slots:
+    - powerRatingPrime
+    - powerRatingPeak
+
+FuelCellGenerator:
+  is_a: Generator
+InternalCombustionGenerator:
+  is_a: Generator
