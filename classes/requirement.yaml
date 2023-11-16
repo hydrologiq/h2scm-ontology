@@ -1,5 +1,6 @@
 Requirement:
   abstract: true
   slots:
+    - id
     - startDate
     - endDate

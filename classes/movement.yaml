@@ -1,6 +1,7 @@
 Movement:
   abstract: true
   slots:
+    - id
     - startDate
     - endDate
     - startLocation

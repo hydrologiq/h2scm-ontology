@@ -1,5 +1,6 @@
 Quote:
   slots:
+    - id
     - item
     - units
     - price

@@ -3,186 +3,165 @@ slots:
   carries:
     domain: Vehicle
     range: Storage
-    required: true
+    required: false
     multivalued: true
-    inlined: false
     inlined_as_list: false
   storedIn:
     domain: Hydrogen
     range: Storage
-    required: true
+    required: false
     multivalued: true
-    inlined: false
     inlined_as_list: false
   includes:
     domain: Service
     range: Product
-    required: true
+    required: false
     multivalued: true
-    inlined: false
     inlined_as_list: false
   coordinates:
     domain: Operational
     range: Service
-    required: true
+    required: false
     multivalued: true
-    inlined: false
     inlined_as_list: false
   produces:
     domain: Company
     range: Product
     required: false
     multivalued: true
-    inlined: false
     inlined_as_list: false
   provides:
     domain: Company
     range: Service
     required: false
     multivalued: true
-    inlined: false
     inlined_as_list: false
   manages:
     domain: Operational
     range: Project
-    required: true
+    required: false
     multivalued: true
-    inlined: false
     inlined_as_list: false
   sites:
     domain: Project
     range: ProjectSite
-    required: true
+    required: false
     multivalued: true
-    inlined: false
     inlined_as_list: false
   basedAt:
     domain: Product
     range: DistributionSite
     multivalued: true
-    inlined: false
     inlined_as_list: false
   producedAt:
     domain: Hydrogen
     range: ProductionSite
-    required: true
+    required: false
     multivalued: true
-    inlined: false
     inlined_as_list: false
   estimatedEnergyUsage:
     domain: ProjectSite
     range: EnergyUsage
-    required: true
+    required: false
     multivalued: true
-    inlined: false
     inlined_as_list: false
   actualEnergyUsage:
     domain: ProjectSite
     range: EnergyUsage
     required: false
     multivalued: true
-    inlined: false
     inlined_as_list: false
   refuellingSchedule:
     domain: ProjectSite
     range: FuelDelivery
     required: false
     multivalued: true
-    inlined: false
     inlined_as_list: false
   fuelDeliveries:
     domain: ProjectSite
     range: FuelDelivery
     required: false
     multivalued: true
-    inlined: false
     inlined_as_list: false
   estimatedFuelRequirement:
     domain: ProjectSite
     range: FuelRequirement
-    required: true
+    required: false
     multivalued: true
-    inlined: false
+    inlined_as_list: false
   actualFuelUsage:
     domain: ProjectSite
     range: FuelRequirement
-    required: true
+    required: false
     multivalued: true
-    inlined: false
     inlined_as_list: false
   assoicatedWith:
     domain: Service
     range: Project
-    required: true
+    required: false
     multivalued: true
-    inlined: false
     inlined_as_list: false
   quotes:
     domain: Service
     range: Quote
     required: false
     multivalued: true
-    inlined: false
     inlined_as_list: false
   transportMovements:
     domain: Delivery
     range: TransportMovement
-    required: true
+    required: false
     multivalued: true
-    inlined: false
     inlined_as_list: false
   transportedIn:
     domain: TransportMovement
     range: Vehicle
-    required: true
+    required: false
     multivalued: true
-    inlined: false
     inlined_as_list: false
   fuelStoredIn:
     domain: FuelTransportMovement
     range: Storage
-    required: true
+    required: false
     multivalued: true
-    inlined: false
     inlined_as_list: false
   source:
     domain: Hydrogen
     range: HydrogenSource
-    required: true
+    required: false
     multivalued: true
-    inlined: false
     inlined_as_list: false
 
   # 1:1 relationships
   item:
     domain: Quote
     range: Product
-    required: true
+    required: false
     inlined: false
   fuelProvidedBy:
     domain: FuelDelivery
     range: FuelService
-    required: true
+    required: false
     inlined: false
   transportProvidedBy:
     domain: FuelDelivery
     range: LogisticService
-    required: true
+    required: false
     inlined: false
   startLocation:
     domain: Movement
     range: Site
-    required: true
+    required: false
     inlined: false
   endLocation:
     domain: Movement
     range: Site
-    required: true
+    required: false
     inlined: false
   price:
     domain: Quote
     range: Price
-    required: true
+    required: false
     inlined: false
 
   # Attributes
