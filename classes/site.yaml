@@ -3,6 +3,7 @@ Site:
   slots:
     - id
     - name
+    - subClassOf
     - long
     - lat
     - streetAddress

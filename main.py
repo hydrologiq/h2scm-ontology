@@ -1,3 +1,4 @@
+import json
 from linkml.generators.pythongen import PythonGenerator
 from linkml.generators.owlgen import OwlSchemaGenerator, MetadataProfile
 from linkml.generators.jsonschemagen import JsonSchemaGenerator
@@ -16,6 +17,7 @@ schema_inlined_out_file_path = f"{out_folder}/{file_name}_inlined.yaml"
 python_out_file_path = f"{out_folder}/{file_name}.py"
 json_ld_out_file_path = f"{out_folder}/{file_name}.jsonld"
 json_out_file_path = f"{out_folder}/{file_name}.json"
+json_relationships_out_file_path = f"{out_folder}/{file_name}_relationships.json"
 json_inlined_out_file_path = f"{out_folder}/{file_name}_inlined.json"
 
 try:
@@ -114,18 +116,58 @@ code = python.serialize(directory_output=True)
 write_file(python_out_file_path, code)
 
 
+def generate_json_relationships(schema):
+    class SetEncoder(json.JSONEncoder):
+        def default(self, obj):
+            if isinstance(obj, set):
+                return list(obj)
+            return json.JSONEncoder.default(self, obj)
+
+    def remove_ref(ref: str):
+        return ref.replace("#/$defs/", "")
+
+    relationships = {}
+    for _, def_value in schema["$defs"].items():
+        if "properties" in def_value:
+            for prop, prop_value in def_value["properties"].items():
+                classes = set({})
+                arr = []
+                if "anyOf" in prop_value:
+                    arr = prop_value["anyOf"]
+                if "items" in prop_value and "anyOf" in prop_value["items"]:
+                    arr = prop_value["items"]["anyOf"]
+                if len(arr) > 0:
+                    for class_name in arr:
+                        classes.add(remove_ref(class_name["$ref"]))
+                if len(classes) > 0:
+                    if relationships.get(prop):
+                        for class_name in classes:
+                            relationships[prop].add(class_name)
+                    else:
+                        relationships[prop] = classes
+
+    write_file(
+        json_relationships_out_file_path, json.dumps(relationships, cls=SetEncoder)
+    )
+
+
 # Only generate a JSON Schema for inlined and non inlined
-def generate_python(schema_file_path: str, out_file_path: str):
+def generate_python(
+    schema_file_path: str, out_file_path: str, generate_relationships: bool = False
+):
     schemas = JsonSchemaGenerator(
         schema_file_path,
         include_range_class_descendants=True,
     )
-    schema = schemas.serialize()
-    write_file(out_file_path, schema)
+
+    if generate_relationships:
+        generate_json_relationships(schemas.generate())
+
+    write_file(out_file_path, schemas.serialize())
 
 
 generate_python(schema_out_file_path, json_out_file_path)
-generate_python(schema_inlined_out_file_path, json_inlined_out_file_path)
+generate_python(schema_inlined_out_file_path, json_inlined_out_file_path, True)
 
 
 contextld = ContextGenerator(schema=schema_out_file_path)

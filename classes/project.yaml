@@ -2,6 +2,7 @@ Project:
   slots:
     - id
     - name
+    - subClassOf
     - startDate
     - endDate
     - sites

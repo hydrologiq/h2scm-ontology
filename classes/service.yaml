@@ -3,6 +3,7 @@ Service:
   slots:
     - id
     - name
+    - subClassOf
     - includes
     - quotes
     - assoicatedWith

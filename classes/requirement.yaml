@@ -2,5 +2,7 @@ Requirement:
   abstract: true
   slots:
     - id
+    - name
+    - subClassOf
     - startDate
     - endDate

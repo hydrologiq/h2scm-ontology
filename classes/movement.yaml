@@ -2,6 +2,8 @@ Movement:
   abstract: true
   slots:
     - id
+    - name
+    - subClassOf
     - startDate
     - endDate
     - startLocation
