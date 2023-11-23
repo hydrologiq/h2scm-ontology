@@ -169,6 +169,7 @@ slots:
     identifier: true
   name:
     required: true
+    slot_uri: rdfs:label
   quantity:
     range: decimal
     minimum_value: 0
