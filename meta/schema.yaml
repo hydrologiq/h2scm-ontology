@@ -1,9 +1,9 @@
-id: https://scm.hydrologiq.com/hydrogen/nrmm
+id: https://w3id.org/hydrologiq/hydrogen/nrmm
 name: hydrogen
 prefixes:
   linkml: https://w3id.org/linkml/
   schema: http://schema.org/
-  hydrogen_nrmm: https://scm.hydrologiq.com/hydrogen/nrmm
+  hydrogen_nrmm: https://w3id.org/hydrologiq/hydrogen/nrmm
   rdfs: http://www.w3.org/2000/01/rdf-schema#
 
 imports:
