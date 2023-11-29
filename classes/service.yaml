@@ -6,4 +6,4 @@ Service:
     - subClassOf
     - includes
     - quotes
-    - assoicatedWith
+    - associatedWith
