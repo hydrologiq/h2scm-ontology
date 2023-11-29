@@ -3,4 +3,3 @@ ProductionAndDistributionSite:
   mixins:
     - ProductionSite
     - DistributionSite
-    - EndUserSite
