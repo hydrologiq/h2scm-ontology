@@ -95,7 +95,7 @@ slots:
     required: false
     multivalued: true
     inlined_as_list: false
-  assoicatedWith:
+  associatedWith:
     domain: Service
     range: Project
     required: false
