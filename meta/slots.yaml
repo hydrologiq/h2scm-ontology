@@ -95,12 +95,6 @@ slots:
     required: false
     multivalued: true
     inlined_as_list: false
-  associatedWith:
-    domain: Service
-    range: Project
-    required: false
-    multivalued: true
-    inlined_as_list: false
   quotes:
     domain: Service
     range: Quote
@@ -161,6 +155,11 @@ slots:
   price:
     domain: Quote
     range: Price
+    required: false
+    inlined: false
+  associatedWith:
+    domain: Service
+    range: Project
     required: false
     inlined: false
 
