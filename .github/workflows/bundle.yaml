@@ -1,9 +1,6 @@
 name: bundle
 run-name: bundling ontology
-on:
-  push:
-    branches:
-      - main
+on: push
 jobs:
   bundle:
     runs-on: ubuntu-latest
