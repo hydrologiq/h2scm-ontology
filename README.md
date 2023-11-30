@@ -9,8 +9,11 @@ The namespace that the ontology follows is `https://w3id.org/hydrologiq/hydrogen
 ### Making changes
 
 1. All changes should be made on a branch and a PR created following the template
+   - Branches should be appropriately named e.g. `relationship-changes`
+   - Commits should be made using gitmoji see the [development guide](https://coda.io/d/_d36dB83GZVM/Development_suNC1#_luVgb)
 1. The PR does not need a reviewer but if you think it needs one please request it
 1. Merge the PR
+1. Delete the branch (can be done via UI or cli with `git branch -D <branch_name>`)
 
 ### Release process
 
