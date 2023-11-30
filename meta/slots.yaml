@@ -95,12 +95,6 @@ slots:
     required: false
     multivalued: true
     inlined_as_list: false
-  quotes:
-    domain: Service
-    range: Quote
-    required: false
-    multivalued: true
-    inlined_as_list: false
   transportMovements:
     domain: Delivery
     range: TransportMovement
@@ -157,9 +151,9 @@ slots:
     range: Price
     required: false
     inlined: false
-  associatedWith:
+  quote:
     domain: Service
-    range: Project
+    range: Quote
     required: false
     inlined: false
 
