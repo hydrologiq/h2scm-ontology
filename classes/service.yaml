@@ -7,4 +7,3 @@ Service:
     - includes
     - quantity
     - quote
-    - associatedWith
