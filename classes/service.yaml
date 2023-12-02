@@ -5,5 +5,3 @@ Service:
     - name
     - subClassOf
     - includes
-    - quantity
-    - quote
