@@ -1,0 +1,6 @@
+SupportService:
+  slots:
+    - id
+    - service
+    - quantity
+    - quote
