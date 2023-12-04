@@ -10,6 +10,7 @@ The namespace that the ontology follows is `https://w3id.org/hydrologiq/hydrogen
 
 1. All changes should be made on a branch and a PR created following the template
    - Branches should be appropriately named e.g. `relationship-changes`
+   - All new YAML files must end with a new line see [known issue](#known-issues)
    - Commits should be made using gitmoji see the [development guide](https://coda.io/d/_d36dB83GZVM/Development_suNC1#_luVgb)
    - The commit will run a [GitHub action](https://github.com/hydrologiq/h2scm-ontology/actions/workflows/bundle.yaml) which will run the build script, if this fails the PR cannot be merged. You can build this locally following the [Building locally](#building-locally) guide.
 1. The PR does not need a reviewer but if you think it needs one please request it
@@ -65,4 +66,4 @@ To run the [build.sh](./build.sh) script locally you need to install python usin
 ### Known issues
 
 - Specifying an array of objects produces a key error, meaning a URI or CURIE (the `id`) will need to be referenced. This means any objects will need to be created as instances of the class.
-- No slots or class names can be the same, they must be unique within the ontology.
+- Each YAML file must end with a new line, otherwise it causes the build script to fail.
