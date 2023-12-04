@@ -11,9 +11,22 @@ The namespace that the ontology follows is `https://w3id.org/hydrologiq/hydrogen
 1. All changes should be made on a branch and a PR created following the template
    - Branches should be appropriately named e.g. `relationship-changes`
    - Commits should be made using gitmoji see the [development guide](https://coda.io/d/_d36dB83GZVM/Development_suNC1#_luVgb)
+   - The commit will run a [GitHub action](https://github.com/hydrologiq/h2scm-ontology/actions/workflows/bundle.yaml) which will run the build script, if this fails the PR cannot be merged. You can build this locally following the [Building locally](#building-locally) guide.
 1. The PR does not need a reviewer but if you think it needs one please request it
 1. Merge the PR
 1. Delete the branch (can be done via UI or cli with `git branch -D <branch_name>`)
+
+### Building locally
+
+To run the [build.sh](./build.sh) script locally you need to install python using pyenv and the following pip requirements. You can do this by following the commands below at the root of the repository.
+
+1. `brew install pyenv`
+1. `eval "$(pyenv init -)"` (optional if already installed)
+1. `pyenv install` (optional if already installed)
+1. `pyenv exec python -m venv .venv` (optional if already installed)
+1. `source .venv/bin/activate`
+1. `pip3 install -r requirements.txt` (optional optional if already installed)
+1. `./build.sh`
 
 ### Release process
 
@@ -52,13 +65,4 @@ The namespace that the ontology follows is `https://w3id.org/hydrologiq/hydrogen
 ### Known issues
 
 - Specifying an array of objects produces a key error, meaning a URI or CURIE (the `id`) will need to be referenced. This means any objects will need to be created as instances of the class.
-
-## Local Setup
-
-To run these scripts locally you need to install python using pyenv and the following pip requirements. You can do this by following the commands below.
-
-1. `eval "$(pyenv init -)"`
-1. `pyenv install` (optional)
-1. `pyenv exec python -m venv .venv`
-1. `source .venv/bin/activate`
-1. `pip3 install -r requirements.txt` (optional)
+- No slots or class names can be the same, they must be unique within the ontology.
