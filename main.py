@@ -134,8 +134,11 @@ def generate_json_relationships(schema):
                 arr = []
                 if "anyOf" in prop_value:
                     arr = prop_value["anyOf"]
-                if "items" in prop_value and "anyOf" in prop_value["items"]:
-                    arr = prop_value["items"]["anyOf"]
+                if "items" in prop_value:
+                    if "$ref" in prop_value["items"]:
+                        arr = [prop_value["items"]]
+                    elif "anyOf" in prop_value["items"]:
+                        arr = prop_value["items"]["anyOf"]
                 if "$ref" in prop_value:
                     arr = [prop_value]
                 if len(arr) > 0:
