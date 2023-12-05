@@ -18,12 +18,6 @@ slots:
     required: false
     multivalued: true
     inlined_as_list: false
-  coordinates:
-    domain: Operational
-    range: Service
-    required: false
-    multivalued: true
-    inlined_as_list: false
   produces:
     domain: Company
     range: Product
@@ -33,12 +27,6 @@ slots:
   provides:
     domain: Company
     range: Service
-    required: false
-    multivalued: true
-    inlined_as_list: false
-  manages:
-    domain: Operational
-    range: Project
     required: false
     multivalued: true
     inlined_as_list: false
