@@ -3,7 +3,6 @@ Movement:
   slots:
     - id
     - name
-    - subClassOf
     - startDate
     - endDate
     - startLocation

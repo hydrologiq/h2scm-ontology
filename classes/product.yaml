@@ -3,5 +3,4 @@ Product:
   slots:
     - id
     - name
-    - subClassOf
     - basedAt

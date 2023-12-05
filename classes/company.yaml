@@ -2,6 +2,5 @@ Company:
   slots:
     - id
     - name
-    - subClassOf
     - produces
     - provides

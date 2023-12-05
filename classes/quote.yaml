@@ -2,7 +2,6 @@ Quote:
   slots:
     - id
     - name
-    - subClassOf
     - item
     - units
     - price
