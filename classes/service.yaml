@@ -3,5 +3,4 @@ Service:
   slots:
     - id
     - name
-    - subClassOf
     - includes

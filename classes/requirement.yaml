@@ -3,6 +3,5 @@ Requirement:
   slots:
     - id
     - name
-    - subClassOf
     - startDate
     - endDate

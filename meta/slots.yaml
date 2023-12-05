@@ -257,10 +257,6 @@ slots:
     required: true
     range: integer
     minimum_value: 0
-  subClassOf:
-    required: false
-    range: resource
-    slot_uri: rdfs:subClassOf
 
 types:
   resource:
