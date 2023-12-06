@@ -143,7 +143,9 @@ def generate_json_relationships(schema):
                     arr = [prop_value]
                 if len(arr) > 0:
                     for class_name in arr:
-                        classes.add(remove_ref(class_name["$ref"]))
+                        obj_name = remove_ref(class_name["$ref"])
+                        if schema["$defs"][obj_name]["type"] == "object":
+                            classes.add(obj_name)
                 if len(classes) > 0:
                     if relationships.get(prop):
                         for class_name in classes:
