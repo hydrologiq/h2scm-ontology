@@ -260,6 +260,16 @@ slots:
     minimum_value: 0
     required: true
     description: The available quantity of this product
+  CO2ePerKG:
+    range: decimal
+    minimum_value: 0
+    required: true
+    description: The amount of CO2e produced per kg
+  CO2ePerMile:
+    range: decimal
+    minimum_value: 0
+    required: true
+    description: The amount of CO2e produced per mile
 
 types:
   resource:
