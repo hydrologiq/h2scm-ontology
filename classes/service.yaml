@@ -4,3 +4,4 @@ Service:
     - id
     - name
     - includes
+    - typicalPricing

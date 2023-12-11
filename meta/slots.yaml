@@ -155,6 +155,12 @@ slots:
     range: Service
     required: true
     inlined: false
+  typicalPricing:
+    domain: Service
+    range: Quote
+    required: false
+    inlined: false
+    description: A Quote which represents the typical pricing for this Service
 
   # Attributes
   id:
