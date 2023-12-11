@@ -2,11 +2,12 @@ Hydrogen:
   abstract: true
   is_a: Product
   slots:
-    - quantity
     - purity
     - storedIn
     - producedAt
     - source
+    - dailyOfftakeCapacity
+    - weeklyProductionCapacity
 
 ElectrolyticHydrogen:
   is_a: Hydrogen
