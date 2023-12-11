@@ -248,13 +248,18 @@ slots:
   dailyOfftakeCapacity:
     range: decimal
     minimum_value: 0
-    required: false
+    required: true
     description: The daily Hydrogen offtake capacity
   weeklyProductionCapacity:
     range: decimal
     minimum_value: 0
-    required: false
+    required: true
     description: The weekly Hydrogen production capacity
+  availableQuantity:
+    range: decimal
+    minimum_value: 0
+    required: true
+    description: The available quantity of this product
 
 types:
   resource:
