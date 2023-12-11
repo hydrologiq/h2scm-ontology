@@ -255,12 +255,12 @@ slots:
     range: decimal
     minimum_value: 0
     required: true
-    description: The daily Hydrogen offtake capacity
+    description: The daily Hydrogen offtake capacity (in kg)
   weeklyProductionCapacity:
     range: decimal
     minimum_value: 0
     required: true
-    description: The weekly Hydrogen production capacity
+    description: The weekly Hydrogen production capacity (in kg)
   availableQuantity:
     range: decimal
     minimum_value: 0
@@ -270,12 +270,22 @@ slots:
     range: decimal
     minimum_value: 0
     required: true
-    description: The amount of CO2e produced per kg
+    description: The amount of CO2e produced per kg (in kg)
   CO2ePerMile:
     range: decimal
     minimum_value: 0
     required: true
-    description: The amount of CO2e produced per mile
+    description: The amount of CO2e produced per mile (in kg)
+  fillingStationCapacity:
+    range: integer
+    minimum_value: 0
+    required: true
+    description: The number of filling stations this Site has
+  fillRate:
+    range: decimal
+    minimum_value: 0
+    required: true
+    description: The average Hydrogen filling rate every minute (in kg)
 
 types:
   resource:
