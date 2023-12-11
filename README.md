@@ -1,12 +1,12 @@
-## Ontology
+# Ontology
 
 This is where the ontology concerning the management of the Hydrogen Non-road mobile machinery (NRMM) supply chain. The ontology follows the [OWL standard](https://www.w3.org/OWL/) and is defined using [LinkML](https://linkml.io/linkml/) in [YAML](https://yaml.org/).
 
-### Namespace
+## Namespace
 
 The namespace that the ontology follows is `https://w3id.org/hydrologiq/hydrogen/nrmm` which is prefixed as `hydrogen_nrmm`.
 
-### Making changes
+## Making changes
 
 1. All changes should be made on a branch and a PR created following the template
    - Branches should be appropriately named e.g. `relationship-changes`
@@ -17,7 +17,7 @@ The namespace that the ontology follows is `https://w3id.org/hydrologiq/hydrogen
 1. Merge the PR
 1. Delete the branch (can be done via UI or cli with `git branch -D <branch_name>`)
 
-### Building locally
+## Building locally
 
 To run the [build.sh](./build.sh) script locally you need to install python using pyenv and the following pip requirements. You can do this by following the commands below at the root of the repository.
 
@@ -29,7 +29,7 @@ To run the [build.sh](./build.sh) script locally you need to install python usin
 1. `pip3 install -r requirements.txt` (optional optional if already installed)
 1. `./build.sh`
 
-### Release process
+## Release process
 
 1. Tag a commit with a version e.g. `git tag -a v1.3.0 -m "Tagging v1.3.0 release"`
 1. Push that tag `git push origin v1.3.0`
@@ -55,15 +55,51 @@ To run the [build.sh](./build.sh) script locally you need to install python usin
    1. Ensure that `Set as the latest release` is selected
    1. Click `Publish release` 🥳
 
-#### Post release
+### Post release
 
 1. Ensure that any repositories which are using the ontology are updated to the latest release, currently this is done by updating the `pre-build.sh` script in every relevant repository.
 
-### Instance details
+## Instance details
 
 - `id` -- `hydrogen_nrmm:<uuid4>`
 
-### Known issues
+## Known issues
 
 - Specifying an array of objects produces a key error, meaning a URI or CURIE (the `id`) will need to be referenced. This means any objects will need to be created as instances of the class.
 - Each YAML file must end with a new line, otherwise it causes the build script to fail.
+
+## Migrations
+
+Currently we have no automated way to provide data migrations for ontology changes, there is only the manual generation and running of [SPARQL Update](https://www.w3.org/TR/sparql11-update/) queries.
+
+We currently have a selected list of [example migrations](#example-migrations) which can be used, please update the list if you have to create a new one (**this will be automated in the future**).
+
+### Running a migration
+
+Currently the only way to run a migration is to navigate to run the SPARQL Update query in the graph database.
+
+### Example migrations
+
+- [Updating an attribute name](#updating-an-attribute-name)
+
+#### Updating an attribute name
+
+Replace the following variables:
+
+- `<old_name>` with the current name for the attribute you want to update. Example: quantity
+- `<new_name>` with the new name for the attribute you want to update. Example: weeklyProductionCapacity
+- `<types>` with a space separated list of the types you want to make this attribute update on. Example: hydrogen_nrmm:ElectrolyticHydrogen hydrogen_nrmm:SteamMethaneReformingHydrogen
+
+Code:
+
+`PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX hydrogen_nrmm: <https://w3id.org/hydrologiq/hydrogen/nrmm>
+DELETE { GRAPH ?graph { ?subject hydrogen_nrmm:<old_name> ?value } }
+INSERT { GRAPH ?graph { ?subject hydrogen_nrmm:<new_name> ?value } }
+WHERE  {
+    GRAPH ?graph {
+        VALUES ?types { <types> }
+    ?subject rdf:type ?types ;
+             hydrogen_nrmm:<old_name> ?value
+    }
+}`
