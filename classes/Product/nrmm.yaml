@@ -1,3 +1,6 @@
 NonRoadMobileMachinery:
   abstract: true
   is_a: Product
+  slots:
+    - quantity
+    - availableQuantity

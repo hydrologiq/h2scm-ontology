@@ -4,6 +4,8 @@ Vehicle:
   slots:
     - carries
     - transportDistance
+    - quantity
+    - availableQuantity
 
 ADRTruck:
   is_a: Vehicle

@@ -3,6 +3,8 @@ Storage:
   is_a: Product
   slots:
     - capacity
+    - quantity
+    - availableQuantity
 
 TubeTrailer:
   is_a: Storage
