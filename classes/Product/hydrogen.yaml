@@ -8,6 +8,7 @@ Hydrogen:
     - source
     - dailyOfftakeCapacity
     - weeklyProductionCapacity
+    - CO2ePerKG
 
 ElectrolyticHydrogen:
   is_a: Hydrogen
