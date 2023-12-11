@@ -266,7 +266,7 @@ slots:
     minimum_value: 0
     required: true
     description: The available quantity of this product
-  CO2ePerKG:
+  CO2ePerKg:
     range: decimal
     minimum_value: 0
     required: true
