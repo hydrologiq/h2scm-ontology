@@ -17,7 +17,24 @@ The namespace that the ontology follows is `https://w3id.org/hydrologiq/hydrogen
 1. Merge the PR
 1. Delete the branch (can be done via UI or cli with `git branch -D <branch_name>`)
 
-## Building locally
+## Packaging
+
+The ontology is currently packaged as a zip file and attached to a specific release. There are multiple files included within the zip file, the following types of files can be found:
+
+- [LinkML YAML](https://linkml.io/) in which the ontology is declared using.
+- [RDF](https://www.w3.org/RDF/) the file format which is the generated [OWL ontology](https://www.w3.org/OWL/).
+- [Python] the generated Python classes used to interface with instances of data.
+- [JSON](https://www.json.org/json-en.html) the generated [JSON Schema](https://json-schema.org/) which includes all the classes in the ontology.
+- [JSON-LD](https://json-ld.org/) the generated JSON context which enables easier understanding of the JSON Schema and data structure.
+
+Within the zip there are four different kinds of generated files, these are:
+
+- `hydrogen_nrmm.*` - This is the un-altered ontology which is defined in this repository.
+- `hydrogen_nrmm_inlined.*` - This is the ontology but with `inlined` and `inlined_as_list` set to `True`. This means that any relationships within the JSON Schema will be inlined as objects not as strings/IDs.
+- `hydrogen_nrmm_relationships.json` - This is a custom json object in which the keys represent the relationship name and the values (array of strings) represent the names of classes which can be associated with that relationship.
+- `hydrogen_nrmm_optional.*` - This is the ontology but with `required` set to `False`.
+
+### Building locally
 
 To run the [build.sh](./build.sh) script locally you need to install python using pyenv and the following pip requirements. You can do this by following the commands below at the root of the repository.
 

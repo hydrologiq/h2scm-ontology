@@ -12,13 +12,20 @@ out_folder = "dist"
 file_name = "hydrogen_nrmm"
 
 rdf_out_file_path = f"{out_folder}/{file_name}.rdf"
+
 schema_out_file_path = f"{out_folder}/{file_name}.yaml"
 schema_inlined_out_file_path = f"{out_folder}/{file_name}_inlined.yaml"
+schema_optional_out_file_path = f"{out_folder}/{file_name}_optional.yaml"
+
 python_out_file_path = f"{out_folder}/{file_name}.py"
+python_optional_out_file_path = f"{out_folder}/{file_name}_optional.py"
+
 json_ld_out_file_path = f"{out_folder}/{file_name}.jsonld"
+
 json_out_file_path = f"{out_folder}/{file_name}.json"
 json_relationships_out_file_path = f"{out_folder}/{file_name}_relationships.json"
 json_inlined_out_file_path = f"{out_folder}/{file_name}_inlined.json"
+json_optional_out_file_path = f"{out_folder}/{file_name}_optional.json"
 
 try:
     os.mkdir("tmp")
@@ -44,13 +51,12 @@ mergefiles("meta.yaml", meta)
 mergefiles("classes.yaml", classes)
 
 
-def set_inlined_slots(slots: [object], inlined: bool = True):
+def set_slots(slots: [object], values: dict = {}):
     for slot in slots:
         slot = slots[slot]
-        if "inlined" in slot:
-            slot["inlined"] = inlined
-        if "inlined_as_list" in slot:
-            slot["inlined_as_list"] = inlined
+        for key in values.keys():
+            if key in slot:
+                slot[key] = values[key]
 
 
 def add_classes(
@@ -58,6 +64,7 @@ def add_classes(
     classes: str,
     out_file: str,
     inlined_slots: bool = False,
+    not_required: bool = False,
     folder: str = "tmp",
 ):
     yaml = ruamel.yaml.YAML()
@@ -68,7 +75,9 @@ def add_classes(
     base_yaml["classes"] = class_yaml
 
     if inlined_slots:
-        set_inlined_slots(base_yaml["slots"])
+        set_slots(base_yaml["slots"], {"inlined": True, "inlined_as_list": True})
+    if not_required:
+        set_slots(base_yaml["slots"], {"required": False})
 
     with open(f"{out_file}", "w") as outfile:
         yaml.dump(base_yaml, outfile)
@@ -76,6 +85,9 @@ def add_classes(
 
 add_classes("meta.yaml", "classes.yaml", schema_out_file_path)
 add_classes("meta.yaml", "classes.yaml", schema_inlined_out_file_path, True)
+add_classes(
+    "meta.yaml", "classes.yaml", schema_optional_out_file_path, not_required=True
+)
 
 
 # Work around a bug in the original schema generator https://github.com/linkml/linkml/issues/1567
@@ -111,9 +123,15 @@ write_file(rdf_out_file_path, rdf)
 
 shutil.rmtree("tmp", ignore_errors=True)
 
-python = PythonGenerator(schema_out_file_path)
-code = python.serialize(directory_output=True)
-write_file(python_out_file_path, code)
+
+def generate_python(schema_file_path: str, out_python_file_path: str):
+    python = PythonGenerator(schema_file_path)
+    code = python.serialize(directory_output=True)
+    write_file(out_python_file_path, code)
+
+
+generate_python(schema_out_file_path, python_out_file_path)
+generate_python(schema_optional_out_file_path, python_optional_out_file_path)
 
 
 def generate_json_relationships(schema):
@@ -159,7 +177,7 @@ def generate_json_relationships(schema):
 
 
 # Only generate a JSON Schema for inlined and non inlined
-def generate_python(
+def generate_json(
     schema_file_path: str, out_file_path: str, generate_relationships: bool = False
 ):
     schemas = JsonSchemaGenerator(
@@ -173,8 +191,9 @@ def generate_python(
     write_file(out_file_path, schemas.serialize())
 
 
-generate_python(schema_out_file_path, json_out_file_path)
-generate_python(schema_inlined_out_file_path, json_inlined_out_file_path, True)
+generate_json(schema_out_file_path, json_out_file_path)
+generate_json(schema_inlined_out_file_path, json_inlined_out_file_path, True)
+generate_json(schema_optional_out_file_path, json_optional_out_file_path)
 
 
 contextld = ContextGenerator(schema=schema_out_file_path)
