@@ -120,3 +120,24 @@ WHERE  {
              hydrogen_nrmm:<old_name> ?value
     }
 }`
+
+#### Updating an instance type
+
+Replace the following variables:
+
+- `<old_type>` with the current name for the attribute you want to update. Example: DistributionSite
+- `<new_type>` with the new name for the attribute you want to update. Example: DispensingSite
+- `<attr>` with the attribute name you want to use as a condition for specifying the instances to update - in this example the attr was fillRate as the migration was changing DistributionSite -> DispensingSite where this attribute was present. You can apply as many attribute conditions as you wish.
+
+Code:
+
+`PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX hydrogen_nrmm: <https://w3id.org/hydrologiq/hydrogen/nrmm>
+DELETE { GRAPH ?graph { ?subject rdf:type hydrogen_nrmm:<old_type> } }
+INSERT { GRAPH ?graph { ?subject rdf:type hydrogen_nrmm:<new_type> } }
+WHERE  {
+    GRAPH ?graph {
+        ?subject rdf:type hydrogen_nrmm:<old_type> ;
+            hydrogen_nrmm:<attr> ?attrValue 
+    }
+}`

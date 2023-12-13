@@ -1,0 +1,5 @@
+DispensingSite:
+  is_a: DistributionSite
+  slots:
+    - fillingStationCapacity
+    - fillRate

@@ -1,5 +1,2 @@
 DistributionSite:
   is_a: Site
-  slots:
-    - fillingStationCapacity
-    - fillRate
