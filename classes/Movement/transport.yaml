@@ -2,6 +2,7 @@ TransportMovement:
   is_a: Movement
   slots:
     - transportedIn
+  description: Information to do with the logistic movement of a transport vehicle
 
 FuelTransportMovement:
   is_a: TransportMovement
@@ -9,3 +10,4 @@ FuelTransportMovement:
     - startWeight
     - endWeight
     - fuelStoredIn
+  description: Information to do with the logistic movement of a fuel transport vehicle

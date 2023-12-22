@@ -3,3 +3,4 @@ FuelDelivery:
   slots:
     - weight
     - fuelProvidedBy
+  description: A delivery of fuel product

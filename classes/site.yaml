@@ -9,3 +9,4 @@ Site:
     - town
     - postCode
     - country
+  description: A physical location

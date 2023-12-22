@@ -4,8 +4,12 @@ Generator:
   slots:
     - powerRatingPrime
     - powerRatingPeak
+  description: A device that converts motion-based power or fuel-based power into electric power for use in an external circuit
 
 FuelCellGenerator:
   is_a: Generator
+  description: A generator that uses fuel cells for power conversion
+
 InternalCombustionGenerator:
   is_a: Generator
+  description: A generator that uses an internal combustion engine for power conversion

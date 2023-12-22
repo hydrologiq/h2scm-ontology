@@ -3,3 +3,4 @@ Delivery:
   slots:
     - transportMovements
     - transportProvidedBy
+  description: An instance of the process of delivering goods to customers

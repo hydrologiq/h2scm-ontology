@@ -6,6 +6,8 @@ Vehicle:
     - transportDistance
     - quantity
     - availableQuantity
+  description: Any form of vehicle
 
 ADRTruck:
   is_a: Vehicle
+  description: A truck for transporting dangerous or hazardous goods in bulk by road

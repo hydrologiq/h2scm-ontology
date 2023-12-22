@@ -5,3 +5,4 @@ Requirement:
     - name
     - startDate
     - endDate
+  description: A definition and a measurement of the service or the product required

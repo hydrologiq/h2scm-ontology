@@ -1,2 +1,3 @@
 FuelService:
   is_a: Service
+  description: A fuel provisioning service

@@ -4,3 +4,4 @@ Company:
     - name
     - produces
     - provides
+  description: A supplier or a customer company in the supply chain

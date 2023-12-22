@@ -2,3 +2,4 @@ FuelRequirement:
   is_a: Requirement
   slots:
     - weight
+  description: A measurement of fuel usage

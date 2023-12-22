@@ -5,3 +5,4 @@ Price:
     - currency
     - unit
     - monetaryValue
+  description: Price information of a product or a service

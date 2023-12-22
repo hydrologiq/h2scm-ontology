@@ -5,3 +5,4 @@ Service:
     - name
     - includes
     - typicalPricing
+  description: Any form of service

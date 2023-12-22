@@ -7,3 +7,4 @@ Movement:
     - endDate
     - startLocation
     - endLocation
+  description: Information to do with the movement of a vehicle

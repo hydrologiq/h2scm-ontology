@@ -5,10 +5,16 @@ Storage:
     - capacity
     - quantity
     - availableQuantity
+  description: A fuel storage product
 
 TubeTrailer:
   is_a: Storage
+  description: A trailer that consists of a cluster of high-pressure fluid fuel cylinders
+
 Cylinder:
   is_a: Storage
+  description: A cylinder for storing and transporting fluid fuel
+
 ManifoldCylinderPallet:
   is_a: Storage
+  description: A bundle of cylinders, usually transported as a unit

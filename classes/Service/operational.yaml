@@ -1,2 +1,3 @@
 Operational:
   is_a: Service
+  description: A service to manage the operation of product(s)
