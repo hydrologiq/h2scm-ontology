@@ -1,2 +1,3 @@
 DistributionSite:
   is_a: Site
+  description: A distribution site for any form of goods

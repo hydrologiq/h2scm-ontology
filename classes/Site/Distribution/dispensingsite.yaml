@@ -3,3 +3,4 @@ DispensingSite:
   slots:
     - fillingStationCapacity
     - fillRate
+  description: A fuel distribution site where the fuel is dispensed to vehicles

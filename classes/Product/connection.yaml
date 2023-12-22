@@ -1,6 +1,8 @@
 Connection:
   abstract: true
   is_a: Product
+  description: A product that connects other products, allowing them to work together
 
 GasConnection:
   is_a: Connection
+  description: A product that connects gas storage or dispensing product(s) to other product(s)

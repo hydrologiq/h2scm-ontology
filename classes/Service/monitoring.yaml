@@ -1,2 +1,3 @@
 Monitoring:
   is_a: Service
+  description: An usage or performance monitoring service

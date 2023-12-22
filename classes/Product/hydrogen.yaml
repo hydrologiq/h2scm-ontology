@@ -9,8 +9,12 @@ Hydrogen:
     - dailyOfftakeCapacity
     - weeklyProductionCapacity
     - CO2ePerKg
+  description: Hydrogen fluid to be used as a fuel
 
 ElectrolyticHydrogen:
   is_a: Hydrogen
+  description: Hydrogen produced via electrolysis
+
 SteamMethaneReformingHydrogen:
   is_a: Hydrogen
+  description: Hydrogen produced via the steam methane reforming (SMR) process

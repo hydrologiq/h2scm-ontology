@@ -7,3 +7,4 @@ ProjectSite:
     - actualFuelUsage
     - refuellingSchedule
     - fuelDeliveries
+  description: A location within a project where hydrogen will be used to power NRMM

@@ -4,3 +4,4 @@ Product:
     - id
     - name
     - basedAt
+  description: Any form of product

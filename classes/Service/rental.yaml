@@ -1,2 +1,3 @@
 Rental:
   is_a: Service
+  description: A service that hires out products to customers

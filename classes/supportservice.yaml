@@ -5,3 +5,4 @@ SupportService:
     - service
     - quantity
     - quote
+  description: An instance of a service being provided to a project

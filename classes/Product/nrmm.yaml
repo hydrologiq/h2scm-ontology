@@ -4,3 +4,4 @@ NonRoadMobileMachinery:
   slots:
     - quantity
     - availableQuantity
+  description: Non-Road Mobile Machinery (NRMM) is a broad category which includes mobile machines, and transportable industrial equipment or vehicles which are not intended for transporting goods or passengers on roads

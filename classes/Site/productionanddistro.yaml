@@ -3,3 +3,4 @@ ProductionAndDistributionSite:
   mixins:
     - ProductionSite
     - DistributionSite
+  description: A combined production and distribution site for any form of goods

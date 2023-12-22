@@ -3,3 +3,4 @@ EnergyUsage:
   slots:
     - average
     - peak
+  description: A measure of electrical energy usage

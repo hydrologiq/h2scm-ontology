@@ -2,3 +2,4 @@ LogisticService:
   is_a: Service
   slots:
     - CO2ePerMile
+  description: A logistics provisioning service

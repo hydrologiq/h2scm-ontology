@@ -1,2 +1,3 @@
 ProductionSite:
   is_a: Site
+  description: A production site for any form of goods
