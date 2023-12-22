@@ -113,6 +113,7 @@ slots:
     required: false
     multivalued: true
     inlined_as_list: false
+    description: The hydrogen production method and its energy source
 
   # 1:1 relationships
   item:
@@ -175,21 +176,26 @@ slots:
   purity:
     range: decimal
     minimum_value: 0
+    description: The purity of a fluid product
   capacity:
     range: decimal
     minimum_value: 0
+    description: The capacity of a storage unit
   transportDistance:
     range: decimal
     minimum_value: 0
     required: true
+    description: The maximum per-shift transport distance of a vehicle
   powerRatingPrime:
     range: decimal
     minimum_value: 0
     required: true
+    description: The prime power rating of a generator
   powerRatingPeak:
     range: decimal
     minimum_value: 0
     required: true
+    description: The peak power rating of a generator
   currency:
     required: true
   monetaryValue:
@@ -206,10 +212,12 @@ slots:
     required: true
     range: decimal
     minimum_value: 0
+    description: The average power
   peak:
     required: true
     range: decimal
     minimum_value: 0
+    description: The peak power
   weeklyRuntime:
     required: true
     range: decimal
@@ -222,10 +230,12 @@ slots:
     required: true
     range: decimal
     minimum_value: 0
+    description: The weight of product transported at the start
   endWeight:
     required: true
     range: decimal
     minimum_value: 0
+    description: The weight of product transported at the end
   weeklyFrequency:
     required: true
     range: decimal
@@ -233,9 +243,11 @@ slots:
   long:
     required: true
     range: decimal
+    description: The longitude value
   lat:
     required: true
     range: decimal
+    description: The latitude value
   streetAddress:
     required: true
   town:
@@ -247,10 +259,12 @@ slots:
   unit:
     required: false
     range: string
+    description: The measurement unit
   units:
     required: true
     range: integer
     minimum_value: 0
+    description: The number of units
   dailyOfftakeCapacity:
     range: decimal
     minimum_value: 0
