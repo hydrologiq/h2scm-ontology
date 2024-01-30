@@ -176,26 +176,26 @@ slots:
   purity:
     range: decimal
     minimum_value: 0
-    description: The purity of a fluid product
+    description: The purity of a fluid product (between 0 and 1)
   capacity:
     range: decimal
     minimum_value: 0
-    description: The capacity of a storage unit
+    description: The amount of fuel the unit can store (in kg)
   transportDistance:
     range: decimal
     minimum_value: 0
     required: true
-    description: The maximum per-shift transport distance of a vehicle
+    description: The maximum per-shift transport distance of a vehicle (in km)
   powerRatingPrime:
     range: decimal
     minimum_value: 0
     required: true
-    description: The prime power rating of a generator
+    description: The prime power rating of a generator (in kW)
   powerRatingPeak:
     range: decimal
     minimum_value: 0
     required: true
-    description: The peak power rating of a generator
+    description: The peak power rating of a generator (in kW)
   currency:
     required: true
   monetaryValue:
@@ -212,12 +212,12 @@ slots:
     required: true
     range: decimal
     minimum_value: 0
-    description: The average power
+    description: The average power (in kW)
   peak:
     required: true
     range: decimal
     minimum_value: 0
-    description: The peak power
+    description: The peak power (in kW)
   weeklyRuntime:
     required: true
     range: decimal
@@ -230,12 +230,12 @@ slots:
     required: true
     range: decimal
     minimum_value: 0
-    description: The weight of product transported at the start
+    description: The weight of product transported at the start (in kg)
   endWeight:
     required: true
     range: decimal
     minimum_value: 0
-    description: The weight of product transported at the end
+    description: The weight of product transported at the end (in kg)
   weeklyFrequency:
     required: true
     range: decimal
@@ -280,16 +280,16 @@ slots:
     minimum_value: 0
     required: true
     description: The available quantity of this product
-  CO2ePerKg:
+  productionCO2e:
     range: decimal
     minimum_value: 0
     required: true
-    description: The amount of CO2e produced per kg (in kg)
-  CO2ePerMile:
+    description: The amount of CO2e emitted during per kg of hydrogen produced (in kg)
+  transportCO2e:
     range: decimal
     minimum_value: 0
     required: true
-    description: The amount of CO2e produced per mile (in kg)
+    description: The amount of CO2e emitted per km of distance travelled (in kg)
   fillingStationCapacity:
     range: integer
     minimum_value: 0
@@ -299,7 +299,7 @@ slots:
     range: decimal
     minimum_value: 0
     required: true
-    description: The average Hydrogen filling rate every minute (in kg)
+    description: The average hydrogen filling rate (in kg/min)
 
 types:
   resource:
