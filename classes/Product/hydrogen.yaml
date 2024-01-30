@@ -8,7 +8,7 @@ Hydrogen:
     - source
     - dailyOfftakeCapacity
     - weeklyProductionCapacity
-    - CO2ePerKg
+    - productionCO2e
   description: Hydrogen fluid to be used as a fuel
 
 ElectrolyticHydrogen:
