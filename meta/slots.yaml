@@ -156,6 +156,18 @@ slots:
     range: Service
     required: true
     inlined: false
+  exclusiveDependencyOnServicesFrom:
+    domain: Service
+    range: Company
+    required: false
+    inlined: false
+    description: A company which provides the downstream service that this service exclusively depends on
+  exclusiveToServicesFrom:
+    domain: Service
+    range: Company
+    required: false
+    inlined: false
+    description: A company whose upstream services have exclusive use of this service
   typicalPricing:
     domain: Service
     range: Quote

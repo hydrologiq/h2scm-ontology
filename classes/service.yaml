@@ -4,5 +4,7 @@ Service:
     - id
     - name
     - includes
+    - exclusiveDependencyOnServicesFrom
+    - exclusiveToServicesFrom
     - typicalPricing
   description: Any form of service
