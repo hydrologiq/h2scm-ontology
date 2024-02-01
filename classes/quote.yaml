@@ -4,5 +4,7 @@ Quote:
     - name
     - item
     - units
-    - price
+    - currency
+    - monetaryValue
+    - monetaryValuePerUnit
   description: Estimated price of a service or a product
