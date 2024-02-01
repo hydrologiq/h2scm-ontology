@@ -141,11 +141,6 @@ slots:
     range: Site
     required: false
     inlined: false
-  price:
-    domain: Quote
-    range: Price
-    required: false
-    inlined: false
   quote:
     domain: SupportService
     range: Quote
@@ -214,6 +209,11 @@ slots:
     required: true
     range: decimal
     minimum_value: 0
+    description: Total price for the quoted amount
+  monetaryValuePerUnit:
+    range: decimal
+    minimum_value: 0
+    description: Price per unit
   startDate:
     required: true
     range: date
@@ -268,10 +268,6 @@ slots:
     required: true
   country:
     required: true
-  unit:
-    required: false
-    range: string
-    description: The measurement unit
   units:
     required: true
     range: integer
