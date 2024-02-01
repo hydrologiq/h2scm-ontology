@@ -114,6 +114,20 @@ slots:
     multivalued: true
     inlined_as_list: false
     description: The hydrogen production method and its energy source
+  exclusiveDownstreamCompanies:
+    domain: Service
+    range: Company
+    required: false
+    multivalued: true
+    inlined_as_list: false
+    description: Downstream companies this service exclusively depends on
+  exclusiveUpstreamCompanies:
+    domain: Service
+    range: Company
+    required: false
+    multivalued: true
+    inlined_as_list: false
+    description: Upstream companies with exclusive use of this service
 
   # 1:1 relationships
   item:
@@ -151,18 +165,6 @@ slots:
     range: Service
     required: true
     inlined: false
-  exclusiveDependencyOnServicesFrom:
-    domain: Service
-    range: Company
-    required: false
-    inlined: false
-    description: A company which provides the downstream service that this service exclusively depends on
-  exclusiveToServicesFrom:
-    domain: Service
-    range: Company
-    required: false
-    inlined: false
-    description: A company whose upstream services have exclusive use of this service
   typicalPricing:
     domain: Service
     range: Quote
