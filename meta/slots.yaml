@@ -270,6 +270,9 @@ slots:
     required: true
   country:
     required: true
+  unit:
+    required: false
+    description: The unit the service or the product is measured in
   units:
     required: true
     range: integer
