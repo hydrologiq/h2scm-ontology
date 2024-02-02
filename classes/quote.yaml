@@ -3,6 +3,7 @@ Quote:
     - id
     - name
     - item
+    - unit
     - units
     - currency
     - monetaryValue
