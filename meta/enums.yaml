@@ -2,4 +2,7 @@ enums:
   HydrogenSource:
     permissible_values:
       Grid:
+      Grid Renewable:
+      Nuclear:
+      Wind:
       Solar:
