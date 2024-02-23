@@ -23,7 +23,7 @@ The ontology is currently packaged as a zip file and attached to a specific rele
 
 - [LinkML YAML](https://linkml.io/) in which the ontology is declared using.
 - [RDF](https://www.w3.org/RDF/) the file format which is the generated [OWL ontology](https://www.w3.org/OWL/).
-- [Python] the generated Python classes used to interface with instances of data.
+- [Python](https://www.python.org/) the generated Python classes used to interface with instances of data.
 - [JSON](https://www.json.org/json-en.html) the generated [JSON Schema](https://json-schema.org/) which includes all the classes in the ontology.
 - [JSON-LD](https://json-ld.org/) the generated JSON context which enables easier understanding of the JSON Schema and data structure.
 
